@@ -1,5 +1,6 @@
-import style from './FeedbackOptions.module.scss';
+import propTypes from 'prop-types';
 import clsx from 'clsx';
+import style from './FeedbackOptions.module.scss';
 
 const FeedbackOptions = ({ options, onLeaveFeedback }) => {
     return (
@@ -23,6 +24,11 @@ const FeedbackOptions = ({ options, onLeaveFeedback }) => {
             })}
         </div>
     );
+};
+
+FeedbackOptions.propTypes = {
+    options: propTypes.arrayOf(propTypes.string).isRequired,
+    onLeaveFeedback: propTypes.func.isRequired,
 };
 
 export default FeedbackOptions;

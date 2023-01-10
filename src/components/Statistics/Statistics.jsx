@@ -1,3 +1,4 @@
+import propTypes from 'prop-types';
 import clsx from 'clsx';
 import style from './Statistics.module.scss';
 
@@ -45,5 +46,13 @@ const Statistics = ({ good, neutral, bad, total, positivePercentage }) => (
         </span>
     </div>
 );
+
+Statistics.propTypes = {
+    good: propTypes.number.isRequired,
+    neutral: propTypes.number.isRequired,
+    bad: propTypes.number.isRequired,
+    total: propTypes.number.isRequired,
+    positivePercentage: propTypes.string.isRequired,
+};
 
 export default Statistics;
